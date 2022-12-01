@@ -14,7 +14,7 @@ int main()
     Subordinates subordinates;
     vector<Subemployee> arr(4, 1);
     Managemployee managemployee(exp, h, j, managerid, subordinates, arr);
-    /*managemployee.output();
+    managemployee.output();
     cout << endl << managemployee << endl;
     Employee* employee;
     Salary sal(3, 3, 3, 3, true, true);
@@ -34,6 +34,6 @@ int main()
     cout << "Зарплата managemployee: " << emp->Employee::getsalary(sal) << endl;
     cout << endl;
     managemployee = subemployee1;
-    managemployee.output();*/
+    managemployee.output();
     return 0;
 }

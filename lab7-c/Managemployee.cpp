@@ -23,44 +23,41 @@ Managemployee::Managemployee(int allfields) : Subemployee(allfields) {
 Managemployee::Managemployee(Experience exp, Hours h, Jobtitle j, int managerid,
 		Subordinates subordinates, vector<Subemployee> arr) : Subemployee(exp, h, j, managerid) {
 	this->subordinates = subordinates;
-	for (int j = 0; j < arr.size(); j++) {
-		this->arr[j] = arr[j];
-	}
+	this->arr = arr;
 }
 
-//}
-//void output() override {
-//	this->Subemployee::output();
-//	subordinates.output();
-//	cout << "Массив подчиненных:\n";
-//	for (int j = 0; j < i; j++) {
-//		cout << arr[j] << endl;
-//	}
-//}
-//void input() override {
-//	this->Subemployee::input();
-//	subordinates.input();
-//	for (int j = 0; j < i; j++) {
-//		cout << "Введите подчиненного: ";
-//		cin >> arr[j];
-//	}
-//}
-//int getsalary(Salary sal) override {
-//	int salary = this->Employee::getsalary(sal);
-//	salary += sal.allmoney(salary, subordinates);
-//	return salary;
-//}
-//Managemployee operator=(Subemployee sub) {
-//	Subemployee::operator=(sub);
-//	return *this;
-//}
-////перегрузка оператора <<
-//ostream& operator<< (ostream& out) {
-//	Subemployee s = *this;
-//	out << s;
-//	out << "Массив подчиненных:\n";
-//	for (int j = 0; j < i; j++) {
-//		out << this->arr[j] << endl;
-//	}
-//	return out;
-//}
+void Managemployee::output() {
+	this->Subemployee::output();
+	subordinates.output();
+	cout << "Массив подчиненных:\n";
+	for (int j = 0; j < arr.size(); j++) {
+		cout << arr[j] << endl;
+	}
+}
+void Managemployee::input(){
+	this->Subemployee::input();
+	subordinates.input();
+	for (int j = 0; j < subordinates.getamount(); j++) {
+		cout << "Введите подчиненного: ";
+		cin >> arr[j];
+	}
+}
+int Managemployee::getsalary(Salary sal) {
+	int salary = this->Employee::getsalary(sal);
+	salary += sal.allmoney(salary, subordinates);
+	return salary;
+}
+Managemployee Managemployee::operator=(Subemployee sub) {
+	Subemployee::operator=(sub);
+	return *this;
+}
+//перегрузка оператора <<
+ostream& Managemployee::operator<< (ostream& out) {
+	Subemployee s = *this;
+	out << s;
+	out << "Массив подчиненных:\n";
+	for (int j = 0; j < arr.size(); j++) {
+		out << this->arr[j] << endl;
+	}
+	return out;
+}

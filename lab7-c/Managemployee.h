@@ -12,9 +12,9 @@ public:
 	Managemployee();
 	Managemployee(int allfields);
 	Managemployee(Experience exp, Hours h, Jobtitle j, int managerid, Subordinates subordinates, vector<Subemployee> arr);
-	//void output() override;
-	//void input() override;
-	//int getsalary(Salary sal) override;
-	//Managemployee operator=(Subemployee sub);
-	//ostream& operator<< (ostream& out);
+	void output() override;
+	void input() override;
+	int getsalary(Salary sal) override;
+	Managemployee operator=(Subemployee sub);
+	ostream& operator<< (ostream& out);
 };
