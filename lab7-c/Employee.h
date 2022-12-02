@@ -26,6 +26,7 @@ public:
 	virtual void tofile(ofstream& file, string filename) = 0;
 	virtual void getfromfile(ifstream& file, string filename);
 	Experience getexp();
+	int getid();
 protected:
 	static int counter;
 	int id; //индивидуальный номер

@@ -1,6 +1,7 @@
 #pragma once
 #include "Subemployee.h"
 #include <vector>
+#include <algorithm> 
 
 class Managemployee : public Subemployee
 {
@@ -17,4 +18,6 @@ public:
 	int getsalary(Salary sal) override;
 	Managemployee operator=(Subemployee sub);
 	ostream& operator<< (ostream& out);
+	void sortarr();
+	Employee* serach();
 };

@@ -14,9 +14,13 @@ int main()
 
     Subemployee sub1(1), sub2(2);
     Managemployee man1(3), man2(4);
-    vector<Employee*> arr{ &sub1, &sub2, &man1, &man2 };
+    vector<Employee*> arr{&man2, &man1,  &sub2, &sub1 };
     Managemployee managemployee(exp, h, j, managerid, subordinates, arr), manag(1);
     managemployee.output();
-    manag.input();
+    managemployee.sortarr();
+    cout << endl;
+    managemployee.output();
+    //manag.input();
+
     return 0;
 }

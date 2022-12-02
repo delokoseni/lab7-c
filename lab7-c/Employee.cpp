@@ -131,3 +131,7 @@ string Employee::getpremium(int houramount) {
 Experience Employee::getexp() {
 	return this->exp;
 }
+
+int  Employee::getid() {
+	return id;
+}

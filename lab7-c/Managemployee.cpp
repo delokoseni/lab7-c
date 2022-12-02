@@ -43,7 +43,7 @@ void Managemployee::input(){
 	this->Subemployee::input();
 	subordinates.input();
 	for (int j = 0; j < subordinates.getamount(); j++) {
-		cout << "Введите подчиненного: ";
+		cout << "Введите подчиненного:\n";
 		(*arr[j]).input();
 	}
 }
@@ -68,4 +68,12 @@ ostream& Managemployee::operator<< (ostream& out) {
 		out << this->arr[j] << endl;
 	}
 	return out;
+}
+
+bool comp(Employee* a, Employee* b) {
+	return (*a).getid() < (*b).getid();
+}
+
+void Managemployee::sortarr() {
+	sort(arr.begin(), arr.end(), comp);
 }
