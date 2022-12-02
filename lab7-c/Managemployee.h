@@ -19,5 +19,5 @@ public:
 	Managemployee operator=(Subemployee sub);
 	ostream& operator<< (ostream& out);
 	void sortarr();
-	Employee* serach();
+	int findarr(Employee* employee);
 };

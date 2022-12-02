@@ -77,3 +77,10 @@ bool comp(Employee* a, Employee* b) {
 void Managemployee::sortarr() {
 	sort(arr.begin(), arr.end(), comp);
 }
+
+int Managemployee::findarr(Employee* employee) {
+	if (find(arr.begin(), arr.end(), employee) != arr.end())
+		return find(arr.begin(), arr.end(), employee) - arr.begin();
+	else
+		return -1;
+}
