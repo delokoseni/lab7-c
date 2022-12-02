@@ -13,8 +13,18 @@ int main()
     Subordinates subordinates(4);
 
     Subemployee sub1(1), sub2(2);
-    Managemployee man1(3), man2(4), man3(5);
-    vector<Employee*> arr{&man2, &man1,  &sub2, &sub1 };
+    vector<Employee*> test{&sub1, &sub2};
+    Managemployee man1(exp, h, j, managerid, subordinates, test), man2(exp, h, j, managerid, subordinates, test), man3(5);
+    vector<Employee*> arr{&man2,  &sub2, &man1, &sub1 };
+    vector<Employee*>::iterator  ir;
+    for (ir = arr.begin(); ir != arr.end(); ++ir){
+        if (dynamic_cast<Managemployee*>(*ir))
+            cout << "Managemployee ";
+        else
+            cout << "Subemployee ";
+        (*ir)->output();
+    }
+
     Managemployee managemployee(exp, h, j, managerid, subordinates, arr), manag(1);
     managemployee.output();
     managemployee.sortarr();

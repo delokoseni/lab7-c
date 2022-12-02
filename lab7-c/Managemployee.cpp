@@ -9,16 +9,20 @@ Managemployee::Managemployee() : Subemployee() {
 
 Managemployee::Managemployee(int allfields) : Subemployee(allfields) {
 	if (allfields >= 1) {
-		Subordinates subs(allfields);
+		Subordinates subs(allfields); 
 		subordinates = subs;
 	}
 	else {
 		Subordinates subs;
 		subordinates = subs;
 	}
-	vector<Employee*> vec(allfields);
+	vector<Employee*> vec(subordinates.getamount());
 	arr = vec;
 	Subemployee subemployee(allfields);
+	vector<Employee*>::iterator  ir;
+	/*for (ir = arr.begin(); ir != arr.end(); ++ir) {
+		*ir = &subemployee;
+	}*/
 	for (int j = 0; j < subordinates.getamount(); j++) {
 		arr[j] = &subemployee;
 	}
@@ -34,8 +38,9 @@ void Managemployee::output() {
 	this->Subemployee::output();
 	subordinates.output();
 	cout << "Массив подчиненных:\n";
-	for (int j = 0; j < subordinates.getamount(); j++) {
-		(*arr[j]).output();
+	vector<Employee*>::iterator  ir;
+	for (ir = arr.begin(); ir != arr.end(); ++ir){
+		(*ir)->output();
 	}
 }
 
